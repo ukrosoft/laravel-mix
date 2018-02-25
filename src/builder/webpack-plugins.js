@@ -25,11 +25,6 @@ module.exports = function() {
     // Activate Webpack autoloading support.
     plugins.push(new webpack.ProvidePlugin(Config.autoload));
 
-    // Add support for webpack 3 scope hoisting.
-    if (Mix.inProduction()) {
-        plugins.push(new webpack.optimize.ModuleConcatenationPlugin());
-    }
-
     // Activate support for Mix_ .env definitions.
     plugins.push(
         MixDefinitionsPlugin.build({
