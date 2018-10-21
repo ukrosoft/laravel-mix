@@ -153,7 +153,7 @@ module.exports = function() {
                     cacheDirectory: true,
                     presets: [
                         [
-                            'env',
+                            '@babel/env',
                             {
                                 modules: false,
                                 targets: {
@@ -164,11 +164,12 @@ module.exports = function() {
                         ]
                     ],
                     plugins: [
-                        'transform-object-rest-spread',
+                        '@babel/plugin-proposal-class-properties',
+                        '@babel/proposal-object-rest-spread',
+                        '@babel/plugin-syntax-dynamic-import',
                         [
-                            'transform-runtime',
+                            '@babel/transform-runtime',
                             {
-                                polyfill: false,
                                 helpers: false
                             }
                         ]
